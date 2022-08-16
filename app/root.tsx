@@ -15,6 +15,7 @@ import {
 
 import styles from "./styles/app.css";
 import { getUser } from "./session.server";
+import NavBar from "~/components/NavBar";
 
 export const meta: MetaFunction = () => {
   return { title: "New Remix App" };
@@ -40,6 +41,7 @@ export default function App() {
         <Links />
       </head>
       <body className="h-full">
+        <NavBar />
         <Outlet />
         <ScrollRestoration />
         <Scripts />
