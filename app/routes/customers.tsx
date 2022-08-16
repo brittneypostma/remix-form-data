@@ -1,10 +1,10 @@
-import type { Customer } from "@prisma/client";
+import { json } from "@remix-run/node";
 import { useLoaderData, NavLink, Outlet } from "@remix-run/react";
 import { getCustomerListItems } from "~/models/customer.server";
 
 export async function loader() {
   const customers = await getCustomerListItems();
-  return { customers };
+  return json({ customers });
 }
 
 export default function Customers() {
